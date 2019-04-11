@@ -1,6 +1,6 @@
 class Boid {
     constructor(){
-        this.position = createVector(random(height), random(width));
+        this.position = createVector(random(width), random(height));
 
         this.velocity = p5.Vector.random2D();
         this.velocity.setMag(random(2, 10));
@@ -15,15 +15,15 @@ class Boid {
     //Infinity edges
     edges(){
         if(this.position.x > width){
-            this.position.x = 0;
+            this.velocity = this.velocity.mult(-1);
         }else if (this.position.x < 0){
-            this.position.x = width;
+            this.velocity = this.velocity.mult(-1);
         }
 
         if(this.position.y > height){
-            this.position.y = 0;
+            this.velocity = this.velocity.mult(-1);
         }else if (this.position.y < 0){
-            this.position.y = height;
+            this.velocity = this.velocity.mult(-1);
         }
     }
 
