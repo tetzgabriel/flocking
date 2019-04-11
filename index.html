@@ -2,14 +2,22 @@
   <head>
     <meta charset="UTF-8" />
     <title>Boids</title>
+    <link rel="stylesheet" href="style.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.8.0/p5.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.8.0/addons/p5.dom.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <script src="sketch.js"></script>
-    <script src="boid.js"></script>
+   
   </head>
   <body>
-    <p>Flocking - with materialize UI</p>
+    <header>
+      <h1 class="title">Flocking</h1>
+      <p class="page-description"> This is a little example of flocking using p5.js. This algorithm was inspired by the Boids algorithm 
+        (created by Craig Reynolds) and by the video of The Coding Train on Youtube.</p>  
+    </header>
+    <div>
+      <script src="sketch.js"></script>
+    </div>
+      <script src="boid.js"></script>
   </body>
 </html>

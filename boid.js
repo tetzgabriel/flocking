@@ -1,17 +1,15 @@
 class Boid {
     constructor(){
-        //Put boid in the center
         this.position = createVector(random(height), random(width));
 
-        //Create velocity vector (length = 1)
         this.velocity = p5.Vector.random2D();
-        //Set magnitude of velocity
-        this.velocity.setMag(random(2, 4));
+        this.velocity.setMag(random(2, 10));
         
         this.acceleration = createVector();
 
-        this.maxForce = 0.2;
-        this.maxSpeed = 4;
+        this.maxForce = 0.8;
+        this.maxSpeed = 10;
+        this.perception = 50;
     }
 
     //Infinity edges
@@ -22,18 +20,16 @@ class Boid {
             this.position.x = width;
         }
 
-        if(this.position.y > width){
+        if(this.position.y > height){
             this.position.y = 0;
         }else if (this.position.y < 0){
-            this.position.y = width;
+            this.position.y = height;
         }
     }
 
 
     //Align boid with the local friends
     align(boids){
-        //Radius of perception
-        let perception = 50;
         let steering = createVector();
         let total = 0;
         
@@ -42,7 +38,7 @@ class Boid {
             let distance = dist(this.position.x, this.position.y, other.position.x, other.position.y); 
             
             //Add to average
-            if( other != this && distance <= perception){
+            if( other != this && distance <= this.perception){
                 steering.add(other.velocity);
                 total++;
             }   
@@ -62,8 +58,6 @@ class Boid {
 
     //Cohesion rule
     cohesion(boids){
-        //Radius of perception
-        let perception = 50;
         let steering = createVector();
         let total = 0;
         
@@ -72,7 +66,7 @@ class Boid {
             let distance = dist(this.position.x, this.position.y, other.position.x, other.position.y); 
             
             //Add to average
-            if( other != this && distance <= perception){
+            if( other != this && distance <= this.perception){
                 steering.add(other.position);
                 total++;
             }   
@@ -93,8 +87,6 @@ class Boid {
 
     //Separation rule
     separation(boids){
-        //Radius of perception
-        let perception = 50;
         let steering = createVector();
         let total = 0;
         
@@ -103,7 +95,7 @@ class Boid {
             let distance = dist(this.position.x, this.position.y, other.position.x, other.position.y); 
             
             //Add to average
-            if( other != this && distance <= perception){
+            if( other != this && distance <= this.perception){
                 let diff = p5.Vector.sub(this.position, other.position);
                 diff.div(distance);
                 steering.add(diff);
@@ -146,7 +138,7 @@ class Boid {
     }
 
     show(){
-        strokeWeight(8);
+        strokeWeight(5);
         stroke(255);
         point(this.position.x, this.position.y)
     }
