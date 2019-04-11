@@ -1,4 +1,5 @@
 const flock = [];
+const Obsts = [];
 
 let alignSlider, cohesionSlider, separationSlider;
 
@@ -9,7 +10,7 @@ function setup(){
     cohesionSlider = createSlider(0, 2 , 1, 0.5);
     separationSlider = createSlider(0, 2 , 1, 0.5);
     
-    for (let i = 0; i < 100; i++){
+    for (let i = 0; i < 140; i++){
         flock.push(new Boid());
     }
 }
@@ -26,9 +27,5 @@ function draw(){
 }
 
 function mouseClicked() {
-    if(flock.length<145){
-        for(let i = 0; i < 5; i++){
-            flock.push(new Boid());
-        }
-    }
+    Obsts.push(new Obstacle(mouseX, mouseY));
 }

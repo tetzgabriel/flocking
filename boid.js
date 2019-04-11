@@ -119,10 +119,6 @@ class Boid {
         this.acceleration.mult(0);
     }
 
-    addBoid(b){
-        this.boids.push(b);
-    }
-
     showBoid(){
         strokeWeight(this.boidSize);
         stroke(255);
