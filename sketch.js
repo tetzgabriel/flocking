@@ -17,8 +17,9 @@ function setup(){
 
 function draw(){
     background(51);
-    if (flock.length<=200){
-        flock.push(new Boid())
+    
+    if (flock.length<=10){
+        flock.push(new Boid());
     }
 
     for (let boid of flock){
@@ -26,5 +27,13 @@ function draw(){
         boid.flock(flock);
         boid.show();
         boid.update();
+    }
+}
+
+function mouseClicked() {
+    if(flock.length<145){
+        for(let i = 0; i < 5; i++){
+            flock.push(new Boid());
+        }
     }
 }

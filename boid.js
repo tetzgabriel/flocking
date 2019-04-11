@@ -1,14 +1,16 @@
 class Boid {
     constructor(){
-        this.position = createVector(random(width), random(height));
+        let x = random(width)
+        let y = random(height);
+        this.position = createVector(x, y);
 
         this.velocity = p5.Vector.random2D();
-        this.velocity.setMag(random(2, 8));
+        this.velocity.setMag(random(2, 6));
         
         this.acceleration = createVector();
 
-        this.maxForce = 0.8;
-        this.maxSpeed = 10;
+        this.maxForce = 0.4;
+        this.maxSpeed = 6;
         this.perception = 50;
     }
 
@@ -115,8 +117,12 @@ class Boid {
         this.acceleration.mult(0);
     }
 
+    addBoid(b){
+        this.boids.push(b);
+    }
+
     show(){
-        strokeWeight(5);
+        strokeWeight(4);
         stroke(255);
         point(this.position.x, this.position.y)
     }
