@@ -2,33 +2,34 @@ class Boid {
     constructor(){
         let x = random(width)
         let y = random(height);
+        this.boidSize = 10;
         this.position = createVector(x, y);
 
         this.velocity = p5.Vector.random2D();
-        this.velocity.setMag(random(2, 6));
+        this.velocity.setMag(random(2, 4));
         
         this.acceleration = createVector();
 
         this.maxForce = 0.4;
-        this.maxSpeed = 6;
+        this.maxSpeed = 4;
         this.perception = 50;
     }
 
-    edges(){
+    setEdges(){
         if(this.position.x > width){
-            this.velocity = this.velocity.mult(-1);
+            this.position.x = this.boidSize;
         }else if (this.position.x < 0){
-            this.velocity = this.velocity.mult(-1);
+            this.position.x = width - this.boidSize;
         }
-
+    
         if(this.position.y > height){
-            this.velocity = this.velocity.mult(-1);
+            this.position.y = this.boidSize;
         }else if (this.position.y < 0){
-            this.velocity = this.velocity.mult(-1);
+            this.position.y = height - this.boidSize;
         }
     }
 
-    align(boids){
+    alignRule(boids){
         let steering = createVector();
         let total = 0;
         
@@ -48,7 +49,7 @@ class Boid {
         return steering;
     }
 
-    cohesion(boids){
+    cohesionRule(boids){
         let steering = createVector();
         let total = 0;
         
@@ -71,7 +72,7 @@ class Boid {
         return steering;
     }
 
-    separation(boids){
+    separationRule(boids){
         let steering = createVector();
         let total = 0;
         
@@ -96,10 +97,10 @@ class Boid {
     }
 
 
-    flock(boids){
-        let alignment = this.align(boids);
-        let cohesion = this.cohesion(boids);
-        let separation = this.separation(boids);
+    applyRules(boids){
+        let alignment = this.alignRule(boids);
+        let cohesion = this.cohesionRule(boids);
+        let separation = this.separationRule(boids);
 
         alignment.mult(alignSlider.value());
         cohesion.mult(cohesionSlider.value());
@@ -110,7 +111,7 @@ class Boid {
         this.acceleration.add(separation);
     }
 
-    update(){
+    updateFlocks(){
         this.position.add(this.velocity);
         this.velocity.add(this.acceleration);
         this.velocity.limit(this.maxSpeed);
@@ -121,8 +122,8 @@ class Boid {
         this.boids.push(b);
     }
 
-    show(){
-        strokeWeight(4);
+    showBoid(){
+        strokeWeight(this.boidSize);
         stroke(255);
         point(this.position.x, this.position.y)
     }

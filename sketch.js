@@ -5,28 +5,23 @@ let alignSlider, cohesionSlider, separationSlider;
 function setup(){
     createCanvas(windowWidth-200,windowHeight-300);
 
-    alignSlider = createSlider(0, 5 , 1, 0.1);
-    cohesionSlider = createSlider(0, 5 , 1, 0.1);
-    separationSlider = createSlider(0, 5 , 1, 0.1);
+    alignSlider = createSlider(0, 2 , 1, 0.5);
+    cohesionSlider = createSlider(0, 2 , 1, 0.5);
+    separationSlider = createSlider(0, 2 , 1, 0.5);
     
-    
-    // for (let i = 0; i < 220; i++){
-    //     flock.push(new Boid());
-    // }
+    for (let i = 0; i < 2; i++){
+        flock.push(new Boid());
+    }
 }
 
 function draw(){
     background(51);
-    
-    if (flock.length<=10){
-        flock.push(new Boid());
-    }
 
     for (let boid of flock){
-        boid.edges();
-        boid.flock(flock);
-        boid.show();
-        boid.update();
+        boid.setEdges();
+        boid.applyRules(flock);
+        boid.showBoid();
+        boid.updateFlocks();
     }
 }
 
