@@ -3,7 +3,7 @@ class Boid {
         let x = random(width)
         let y = random(height);
 
-        this.perception = 60;
+        this.perception = 100;
         this.maxSpeed = this.perception / 10;
         this.maxForce = this.maxSpeed / 10;
 
