@@ -19,4 +19,4 @@ Basicaly the dots in your screen follow 3 simple rules:
   </ul>
 </ul>
 
-You can read more about these rules [here](https://en.wikipedia.org/wiki/Boids), and you can watch The Coding Challenge video [here](https://www.youtube.com/watch?v=mhjuuHl6qHM&t=2135s)
+You can read more about these rules [here](https://en.wikipedia.org/wiki/Boids), and you can watch The Coding Challenge video [here](https://www.youtube.com/watch?v=mhjuuHl6qHM&t=2135s) for more details of the math involved.
