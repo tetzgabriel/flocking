@@ -1,7 +1,6 @@
 # Flocking Simulation
 An flocking simulation using p5.js
-![Cohesion Rule](https://imgur.com/uanlXSl)
-![Alignment Rule](https://imgur.com/z73JhEf)
-![Separation Rule](https://imgur.com/eaSkcU7)
 
-[Imgur](https://i.imgur.com/z73JhEf.gif)
+[Alignment Rule Image](https://i.imgur.com/z73JhEf.gif)
+[Cohesion Rule Image](https://i.imgur.com/uanlXSl.gif)
+[Separation Rule Image](https://i.imgur.com/eaSkcU7.gif)
