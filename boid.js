@@ -2,17 +2,18 @@ class Boid {
     constructor(){
         let x = random(width)
         let y = random(height);
+
+        this.perception = 60;
+        this.maxSpeed = this.perception / 10;
+        this.maxForce = this.maxSpeed / 10;
+
         this.boidSize = 10;
         this.position = createVector(x, y);
 
         this.velocity = p5.Vector.random2D();
-        this.velocity.setMag(random(2, 4));
+        this.velocity.setMag(random((this.maxSpeed/2), this.maxSpeed));
         
-        this.acceleration = createVector();
-
-        this.maxForce = 0.4;
-        this.maxSpeed = 4;
-        this.perception = 50;
+        this.acceleration = createVector();    
     }
 
     setEdges(){
@@ -111,7 +112,7 @@ class Boid {
         this.acceleration.add(separation);
     }
 
-    updateFlocks(){
+    updateBoids(){
         this.position.add(this.velocity);
         this.velocity.add(this.acceleration);
         this.velocity.limit(this.maxSpeed);
