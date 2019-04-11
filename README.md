@@ -9,14 +9,14 @@ Basicaly the dots in your screen follow 3 simple rules:
   <ul>
     <li>That causes the boids points towards the average heading of other next boids</li>
   </ul>
-  <li>The [Cohesion Rule Image](https://i.imgur.com/uanlXSl.gif) and</li>
+  <li>The [Cohesion Rule Image](https://i.imgur.com/uanlXSl.gif)</li>
   <ul>
-    <li>This makes the boid to steer towards the center of mass of the flock</li>
+    <li>That makes the boid to steer towards the center of mass of the flock</li>
   </ul>
   <li>The [Separation Rule Image](https://i.imgur.com/eaSkcU7.gif)</li>
   <ul>    
-    <li>Test</li>
-   </ul>
+    <li>This rule makes the boid to avoid crowding</li>
+  </ul>
 </ul>
 
 You can read more about these rules [here](https://en.wikipedia.org/wiki/Boids), but the basicaly cause that the boids 
