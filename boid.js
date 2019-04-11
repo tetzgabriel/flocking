@@ -3,7 +3,7 @@ class Boid {
         this.position = createVector(random(width), random(height));
 
         this.velocity = p5.Vector.random2D();
-        this.velocity.setMag(random(2, 10));
+        this.velocity.setMag(random(2, 8));
         
         this.acceleration = createVector();
 
@@ -12,7 +12,6 @@ class Boid {
         this.perception = 50;
     }
 
-    //Infinity edges
     edges(){
         if(this.position.x > width){
             this.velocity = this.velocity.mult(-1);
@@ -27,74 +26,56 @@ class Boid {
         }
     }
 
-
-    //Align boid with the local friends
     align(boids){
         let steering = createVector();
         let total = 0;
         
         for(let other of boids){
-            //Distance of this boid and other boids
             let distance = dist(this.position.x, this.position.y, other.position.x, other.position.y); 
-            
-            //Add to average
             if( other != this && distance <= this.perception){
                 steering.add(other.velocity);
                 total++;
             }   
         }
         if (total > 0){
-            //Avg of direction
             steering.div(total);
             steering.setMag(this.maxSpeed);
             steering.sub(this.velocity);
-            //Limit the magntude of the vector
             steering.limit(this.maxForce);
         }
-
-        //Vector direction
         return steering;
     }
 
-    //Cohesion rule
     cohesion(boids){
         let steering = createVector();
         let total = 0;
         
         for(let other of boids){
-            //Distance of this boid and other boids
             let distance = dist(this.position.x, this.position.y, other.position.x, other.position.y); 
             
-            //Add to average
             if( other != this && distance <= this.perception){
                 steering.add(other.position);
                 total++;
             }   
         }
         if (total > 0){
-            //Avg of position
             steering.div(total);
             steering.sub(this.position);
             steering.setMag(this.maxSpeed);
             steering.sub(this.velocity);
-            //Limit the magntude of the vector
             steering.limit(this.maxForce);
         }
 
-        //Vector direction
         return steering;
     }
 
-    //Separation rule
     separation(boids){
         let steering = createVector();
         let total = 0;
         
         for(let other of boids){
-            //Distance of this boid and other boids
             let distance = dist(this.position.x, this.position.y, other.position.x, other.position.y); 
             
-            //Add to average
             if( other != this && distance <= this.perception){
                 let diff = p5.Vector.sub(this.position, other.position);
                 diff.div(distance);
@@ -103,15 +84,12 @@ class Boid {
             }   
         }
         if (total > 0){
-            //Avg of position
             steering.div(total);
             steering.setMag(this.maxSpeed);
             steering.sub(this.velocity);
-            //Limit the magntude of the vector
             steering.limit(this.maxForce);
         }
 
-        //Vector direction
         return steering;
     }
 
