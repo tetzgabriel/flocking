@@ -3,21 +3,21 @@ This is a small flocking simulation example using *p5.js*.
 
 I made this inspired on the Boids algorithm created by Craig Reynolds and by *Coding Challenge #124: Flocking Simulation* video of The Coding Train.
 
-Basicaly the dots in your screen follow 3 simple rules:
+Basicaly the dots in your screen follow <strong>3 simple rules</strong>:
 <ul>
-  <li>The Alignment Rule Image (https://i.imgur.com/z73JhEf.gif)</li>
+  <li>The <strong>Alignment</strong> Rule (https://i.imgur.com/z73JhEf.gif)</li>
   <ul>
     <li>
       That causes the boids points towards the average heading of other next boids<br>
     </li>
   </ul>
-  <li>The Cohesion Rule Image (https://i.imgur.com/uanlXSl.gif)</li>
+  <li>The <strong>Cohesion</strong> Rule (https://i.imgur.com/uanlXSl.gif)</li>
   <ul>
     <li>
       That makes the boid to steer towards the center of mass of the flock<br>
     </li>
   </ul>
-  <li>The Separation Rule Image (https://i.imgur.com/eaSkcU7.gif)</li>
+  <li>The <strong>Separation</strong> Rule (https://i.imgur.com/eaSkcU7.gif)</li>
   <ul>    
     <li>
       This rule makes the boid to avoid crowding
@@ -30,12 +30,12 @@ You can read more about these rules [here](https://en.wikipedia.org/wiki/Boids),
 # Some Changes and Addons
 In this version of *flocking simulation* I made some changes e added new functions to the algorithm:
 <ul>
-  <li>Proportion between the <strong>perception</strong> *maxSpeed* and *max force*</li>
+  <li>Proportion between the <strong>perception</strong> <strong>maxSpeed</strong> and <strong>max force</strong></li>
   <ul>
-    <li>Set the *perception* -> *maxSpeed* = *perception/10* and *maxForce* = *maxSpeed/10*</li>
+    <li>Set the *perception* -> <strong>maxSpeed</strong> = perception/10 and <strong>maxForce</strong> = maxSpeed/10</li>
   </ul>
   <li>Obstacles</li>
   <ul>
-    <li>By clicking or dragging the mouse, you can create obstacles in the canvas, so the boids will avoid them</li>
+    <li>By clicking or dragging the mouse, you can create <strong>obstacles</strong> in the canvas, so the boids will avoid them</li>
   </ul>
 </ul>
