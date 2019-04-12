@@ -27,4 +27,15 @@ Basicaly the dots in your screen follow 3 simple rules:
 
 You can read more about these rules [here](https://en.wikipedia.org/wiki/Boids), and you can watch The Coding Challenge video [here](https://www.youtube.com/watch?v=mhjuuHl6qHM&t=2135s) for more details of the math involved.
 
-# Some Changes
+# Some Changes and Addons
+In this version of *flocking simulation* i made some changes e added new functions to the algorithm:
+<ul>
+  <li>Proportion between the *perception* *maxSpeed* and *max force*</li>
+  <ul>
+    <li>Set the *perception* -> *maxSpeed* = *perception/10* and *maxForce* = *maxSpeed/10*</li>
+  </ul>
+  <li>Obstacles</li>
+  <ul>
+    <li>By clicking or dragging the mouse, you can create obstacles in the canvas, so the boids will avoid them</li>
+  </ul>
+</ul>
