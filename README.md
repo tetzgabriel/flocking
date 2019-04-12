@@ -8,13 +8,13 @@ Basicaly the dots in your screen follow 3 simple rules:
   <li>The Alignment Rule Image (https://i.imgur.com/z73JhEf.gif)</li>
   <ul>
     <li>
-      That causes the boids points towards the average heading of other next boids
+      That causes the boids points towards the average heading of other next boids<br>
     </li>
   </ul>
   <li>The Cohesion Rule Image (https://i.imgur.com/uanlXSl.gif)</li>
   <ul>
     <li>
-      That makes the boid to steer towards the center of mass of the flock
+      That makes the boid to steer towards the center of mass of the flock<br>
     </li>
   </ul>
   <li>The Separation Rule Image (https://i.imgur.com/eaSkcU7.gif)</li>
