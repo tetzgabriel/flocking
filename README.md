@@ -30,7 +30,7 @@ You can read more about these rules [here](https://en.wikipedia.org/wiki/Boids),
 # Some Changes and Addons
 In this version of *flocking simulation* I made some changes e added new functions to the algorithm:
 <ul>
-  <li>Proportion between the <bold>perception</bold> *maxSpeed* and *max force*</li>
+  <li>Proportion between the <strong>perception</strong> *maxSpeed* and *max force*</li>
   <ul>
     <li>Set the *perception* -> *maxSpeed* = *perception/10* and *maxForce* = *maxSpeed/10*</li>
   </ul>
