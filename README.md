@@ -1,5 +1,5 @@
 # Flocking Simulation
-This is a small flocking simulation example using *p5.js* (and materilialize BTW).
+This is a small flocking simulation example using *p5.js*.
 
 I made this inspired on the Boids algorithm created by Craig Reynolds and by *Coding Challenge #124: Flocking Simulation* video of The Coding Train.
 
