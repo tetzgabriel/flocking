@@ -3,11 +3,11 @@ class Boid {
         let x = random(width)
         let y = random(height);
 
-        this.perception = 100;
+        this.perception = 80;
         this.maxSpeed = this.perception / 10;
         this.maxForce = this.maxSpeed / 10;
 
-        this.boidSize = 10;
+        this.boidSize = 8;
         this.position = createVector(x, y);
 
         this.velocity = p5.Vector.random2D();
@@ -16,7 +16,7 @@ class Boid {
         this.acceleration = createVector();    
     }
 
-    setEdges(){
+    avoidEdges(){
         if(this.position.x > width){
             this.position.x = this.boidSize;
         }else if (this.position.x < 0){
@@ -27,6 +27,16 @@ class Boid {
             this.position.y = this.boidSize;
         }else if (this.position.y < 0){
             this.position.y = height - this.boidSize;
+        }
+    }
+
+    avoidObsts(obstacles){
+        for(let obst of obstacles){ 
+            let distance = dist(this.position.x, this.position.y, obst.position.x, obst.position.y)
+            if(distance < (this.perception/2)){
+                this.velocity = this.velocity.mult(-1);
+                this.velocity.setMag(this.maxSpeed*1.5);
+            } 
         }
     }
 

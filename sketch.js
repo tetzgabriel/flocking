@@ -19,10 +19,13 @@ function draw(){
     background(51);
 
     for (let boid of flock){
-        boid.setEdges();
+        boid.avoidEdges();
         boid.applyRules(flock);
         boid.updateBoids();
         boid.showBoid();
+        if(obsts.length>0){
+            boid.avoidObsts(obsts);
+        }
     }
 
     for(let obst of obsts){
@@ -31,5 +34,9 @@ function draw(){
 }
 
 function mouseClicked() {
+    obsts.push(new Obstacle(mouseX, mouseY));
+}
+
+function mouseDragged() {
     obsts.push(new Obstacle(mouseX, mouseY));
 }
