@@ -5,19 +5,19 @@ I made this inspired on the Boids algorithm created by Craig Reynolds and by *Co
 
 Basicaly the dots in your screen follow <strong>3 simple rules</strong>:
 <ul>
-  <li>The <strong>Alignment</strong> Rule (https://i.imgur.com/z73JhEf.gif)</li>
+  <li>The <strong>Alignment</strong> Rule <https://i.imgur.com/z73JhEf.gif></li>
   <ul>
     <li>
       That causes the boids points towards the average heading of other next boids<br>
     </li>
   </ul>
-  <li>The <strong>Cohesion</strong> Rule (https://i.imgur.com/uanlXSl.gif)</li>
+  <li>The <strong>Cohesion</strong> Rule <https://i.imgur.com/uanlXSl.gif></li>
   <ul>
     <li>
       That makes the boid to steer towards the center of mass of the flock<br>
     </li>
   </ul>
-  <li>The <strong>Separation</strong> Rule (https://i.imgur.com/eaSkcU7.gif)</li>
+  <li>The <strong>Separation</strong> Rule <https://i.imgur.com/eaSkcU7.gif></li>
   <ul>    
     <li>
       This rule makes the boid to avoid crowding
