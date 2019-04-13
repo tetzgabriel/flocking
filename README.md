@@ -39,3 +39,6 @@ In this version of *flocking simulation* I made some changes e added new functio
     <li>By clicking or dragging the mouse, you can create <strong>obstacles</strong> in the canvas, so the boids will avoid them</li>
   </ul>
 </ul>
+
+# Improvements, Bugs and New Features
+I'm working on this project in my spare time, so it can take a while for me to launch any improvement, bugfix ou new feature. So feel free to open a Pull Request or, if you prefer, send me an e-mail on: tetz.gabriel@gmail.com!
