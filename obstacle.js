@@ -9,7 +9,7 @@ class Obstacle {
 
     showObst(){
         strokeWeight(this.obstSize);
-        stroke(255, 0, 0);
+        stroke(239, 74, 137);
         point(this.position.x, this.position.y)
     }
 }

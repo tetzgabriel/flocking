@@ -1,5 +1,6 @@
 const flock = [];
 const obsts = [];
+let total = 0; 
 
 let alignSlider, cohesionSlider, separationSlider;
 
@@ -10,7 +11,7 @@ function setup(){
     cohesionSlider = createSlider(0, 2 , 1, 0.5);
     separationSlider = createSlider(0, 2 , 1, 0.5);
     
-    for (let i = 0; i < 180; i++){
+    for (let i = 0; i < 120; i++){
         flock.push(new Boid());
     }
 }
@@ -34,9 +35,33 @@ function draw(){
 }
 
 function mouseClicked() {
-    obsts.push(new Obstacle(mouseX, mouseY));
+    for (let boid of flock){
+        let distance = dist(mouseX, mouseY, boid.position.x, boid.position.y)
+
+        if (distance < (boid.perception)){
+            total = 1;
+        }
+    }    
+
+    if(total == 0){
+        obsts.push(new Obstacle(mouseX, mouseY, flock));
+    }else{
+        total = 0;
+    }
+    
 }
 
 function mouseDragged() {
-    obsts.push(new Obstacle(mouseX, mouseY));
+    for (let boid of flock){
+        let distance = dist(mouseX, mouseY, boid.position.x, boid.position.y)
+        if (distance < (boid.perception)){
+            total = 1;
+        }
+    }    
+
+    if(total == 0){
+        obsts.push(new Obstacle(mouseX, mouseY, flock));
+    }else{
+        total = 0;
+    }
 }

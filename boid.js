@@ -3,7 +3,7 @@ class Boid {
         let x = random(width)
         let y = random(height);
 
-        this.perception = 80;
+        this.perception = 50;
         this.maxSpeed = this.perception / 10;
         this.maxForce = this.maxSpeed / 10;
 
@@ -131,7 +131,7 @@ class Boid {
 
     showBoid(){
         strokeWeight(this.boidSize);
-        stroke(255);
+        stroke(50, 115, 219);
         point(this.position.x, this.position.y)
     }
 }
